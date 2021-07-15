@@ -12,15 +12,14 @@
         <div class="options__checkbox"></div>
         <p class="options__text">{{ option.name }}</p>
       </label>
-      <p>{{ checkedOptions }}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "MutliSelect",
-  data: function () {
+  name: 'MutliSelect',
+  data: function() {
     return {
       checkedOptions: [],
     };
@@ -31,15 +30,14 @@ export default {
   },
   methods: {
     filterMedia() {
-      console.log("filter media is called", this.checkedOptions);
-      this.$emit("update-options", this.checkedOptions);
+      this.$emit('update-options', this.checkedOptions);
     },
   },
   mounted() {
     this.checkedOptions = this.selectedOptions;
   },
   watch: {
-    selectedOptions: function (newVal) {
+    selectedOptions: function(newVal) {
       this.checkedOptions = newVal;
     },
   },
@@ -76,7 +74,7 @@ export default {
   input {
     display: none;
     &:checked ~ .options__checkbox {
-      background: url("../assets/checked.svg") center no-repeat;
+      background: url('../assets/checked.svg') center no-repeat;
       background-color: #55bb06;
       border-color: #55bb06;
     }
